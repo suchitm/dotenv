@@ -1,0 +1,72 @@
+set nocompatible
+filetype off
+syntax on
+set cc=80
+
+inoremap jj <esc>
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'jpalardy/vim-slime'
+Plugin 'JuliaEditorSupport/julia-vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+" ...
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=80
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
+
+au BufNewFile,BufRead *.R set tabstop=4
+au BufNewFile,BufRead *.R set softtabstop=4
+au BufNewFile,BufRead *.R set shiftwidth=4
+au BufNewFile,BufRead *.R set textwidth=80
+au BufNewFile,BufRead *.R set expandtab
+au BufNewFile,BufRead *.R set autoindent
+au BufNewFile,BufRead *.R set fileformat=unix
+
+au BufNewFile,BufRead *.r set tabstop=4
+au BufNewFile,BufRead *.r set softtabstop=4
+au BufNewFile,BufRead *.r set shiftwidth=4
+au BufNewFile,BufRead *.r set textwidth=80
+au BufNewFile,BufRead *.r set expandtab
+au BufNewFile,BufRead *.r set autoindent
+au BufNewFile,BufRead *.r set fileformat=unix
+
+autocmd BufRead,BufNewFile *.jl set filetype=julia
+au BufNewFile,BufRead *.jl set tabstop=4
+au BufNewFile,BufRead *.jl set softtabstop=4
+au BufNewFile,BufRead *.jl set shiftwidth=4
+au BufNewFile,BufRead *.jl set textwidth=80
+au BufNewFile,BufRead *.jl set expandtab
+au BufNewFile,BufRead *.jl set autoindent
+au BufNewFile,BufRead *.jl set fileformat=unix
+
+au BufNewFile,BufRead *.tex set tabstop=4
+au BufNewFile,BufRead *.tex set softtabstop=4
+au BufNewFile,BufRead *.tex set shiftwidth=4
+au BufNewFile,BufRead *.tex set textwidth=80
+au BufNewFile,BufRead *.tex set expandtab
+au BufNewFile,BufRead *.tex set autoindent
+au BufNewFile,BufRead *.tex set fileformat=unix
+
+let g:slime_target = "tmux"
+let g:default_julia_version = 'devel'
+let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
