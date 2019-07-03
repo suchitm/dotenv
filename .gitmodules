@@ -5,3 +5,7 @@
 [submodule "dotvim/bundle/VundleVim"]
 	path = dotvim/bundle/VundleVim
 	url = http://github.com/VundleVim/Vundle.vim
+	ignore = dirty
+[submodule "dotvim/bundle/bundle/Vundle.vim"]
+	path = dotvim/bundle/bundle/Vundle.vim
+	url = http://github.com/VundleVim/Vundle.vim.git
