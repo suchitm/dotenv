@@ -2,3 +2,6 @@
 	path = dotvim/bundle/vim-slime
 	url = http://github.com/jpalardy/vim-slime
 	ignore = dirty
+[submodule "dotvim/bundle/VundleVim"]
+	path = dotvim/bundle/VundleVim
+	url = http://github.com/VundleVim/Vundle.vim
