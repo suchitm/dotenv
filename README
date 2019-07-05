@@ -5,9 +5,9 @@ git clone https://github.com/suchitm/dotenv.git
 mv .vimrc .vimrc_orig
 mv .tmux.conf .tmux.conf_orig
 #
-ln -s ~/dotenv/dotvim/vimrc .vimrc
-ln -s ~/dotenv/tmux/tmux.conf .tmux.conf
-ln -s ~/dotenv/tmux/dotvim/ ~/.vim/
+ln -s dotenv/dotvim/vimrc .vimrc
+ln -s dotenv/tmux/tmux.conf .tmux.conf
+ln -s dotenv/dotvim/ .vim
 #
 cd dotenv
 git submodule update --init recursive
