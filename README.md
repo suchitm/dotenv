@@ -7,3 +7,6 @@ mv .tmux.conf .tmux.conf_orig
 #
 ln -s dotenv/dotvim/vimrc .vimrc
 ln -s dotevn/tmux/tmux.conf .tmux.conf
+#
+cd dotenv
+git submodule update --init recursive
