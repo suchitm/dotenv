@@ -10,4 +10,4 @@ ln -s dotenv/tmux/tmux.conf .tmux.conf
 ln -s dotenv/dotvim/ .vim
 #
 cd dotenv
-git submodule update --init recursive
+git submodule update --init --recursive
