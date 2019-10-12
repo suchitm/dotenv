@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 syntax on
-set cc=80
+set cc=81
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -73,3 +73,4 @@ au BufNewFile,BufRead *.tex set fileformat=unix
 let g:slime_target = "tmux"
 let g:default_julia_version = 'devel'
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+let g:slime_python_ipython = 1
