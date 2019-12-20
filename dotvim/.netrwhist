@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/smehrotra/fastbayes/tests/testthat'
 let g:netrw_dirhist_2='/Users/smehrotra/vbR'
@@ -9,3 +10,7 @@ let g:netrw_dirhist_6='/Users/smehrotra/vbR/vb_lasso'
 let g:netrw_dirhist_7='/Users/smehrotra/AnalyticsWiki/markdown_docs'
 let g:netrw_dirhist_8='/Users/smehrotra/AnalyticsWiki'
 let g:netrw_dirhist_9='/Users/smehrotra/AnalyticsWiki/markdown_docs'
+=======
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/suchit/vbR/.git'
+>>>>>>> d5071c0bad98296ef844240c9f6d2b7129c3c62b

@@ -1,7 +1,7 @@
 set nocompatible
 filetype plugin indent on
 syntax on
-set cc=80
+set cc=81
 
 call pathogen#infect()
 call pathogen#helptags()
