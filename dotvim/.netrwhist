@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/smehrotra/fastbayes/tests/testthat'
+let g:netrw_dirhist_2='/Users/smehrotra/vbR'
+let g:netrw_dirhist_3='/Users/smehrotra/vbR/probit_lasso'
+let g:netrw_dirhist_4='/Users/smehrotra/vbR/probit_ridge'
+let g:netrw_dirhist_5='/Users/smehrotra/fastbayes/src/include'
+let g:netrw_dirhist_6='/Users/smehrotra/vbR/vb_lasso'
+let g:netrw_dirhist_7='/Users/smehrotra/AnalyticsWiki/markdown_docs'
+let g:netrw_dirhist_8='/Users/smehrotra/AnalyticsWiki'
+let g:netrw_dirhist_9='/Users/smehrotra/AnalyticsWiki/markdown_docs'
