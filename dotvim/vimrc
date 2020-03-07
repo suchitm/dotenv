@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 syntax on
-set cc=81
+set cc=80
 
 call pathogen#infect()
 call pathogen#helptags()
