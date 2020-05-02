@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV R_VERSION=${R_VERSION:-3.6.3}
+ENV R_VERSION=${R_VERSION:-4.0.0}
 
 RUN apt-get update
 
@@ -26,7 +26,7 @@ RUN apt-get install -y --no-install-recommends \
 	libjpeg-turbo8-dev \
 	libopenblas-dev \
 	libpango1.0-dev \
-	libpcre3-dev \
+	libpcre2-dev \
 	libpng-dev \
 	libreadline-dev \
 	libssl-dev \
@@ -36,6 +36,7 @@ RUN apt-get install -y --no-install-recommends \
 	libxml2-dev \
 	libxt-dev \
 	make \
+	pcre2-utils \
 	perl \
 	texinfo \
 	texlive-extra-utils \
@@ -52,7 +53,7 @@ RUN apt-get install -y --no-install-recommends \
 # install R
 RUN cd tmp/ \
 	# Download source code
-	&& curl -O https://cran.r-project.org/src/base/R-3/R-${R_VERSION}.tar.gz \
+	&& curl -O https://cran.r-project.org/src/base/R-4/R-${R_VERSION}.tar.gz \
 	# Extract source code
 	&& tar -xf R-${R_VERSION}.tar.gz \
 	&& cd R-${R_VERSION} \
@@ -82,6 +83,4 @@ RUN cd tmp/ \
 	# Build and install
 	&& make \
 	&& make install
-
-
 
