@@ -2,7 +2,7 @@
 	path = dotvim/bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime
 [submodule "dotvim/bundle/bundle/Vundle.vim"]
-	path = dotvim/bundle/bundle/Vundle.vim
+	path = dotvim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "dotvim/bundle/julia-vim"]
 	path = dotvim/bundle/julia-vim
@@ -11,5 +11,5 @@
 	path = dotvim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
 [submodule "dotvim/bundle/vim-markdown"]
-	path = dotvim/bundle/julia-vim
+	path = dotvim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
