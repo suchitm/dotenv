@@ -19,7 +19,7 @@ if exists("*GetJuliaIndent")
   finish
 endif
 
-let s:skipPatterns = '\<julia\%(Comprehension\%(For\|If\)\|RangeEnd\|Comment[LM]\|\%([bsv]\|ip\|big\|MIME\|Shell\|Printf\|Doc\)\=String\|RegEx\|SymbolS\?\)\>'
+let s:skipPatterns = '\<julia\%(Comprehension\%(For\|If\)\|RangeKeyword\|Comment[LM]\|\%([bsv]\|ip\|big\|MIME\|Shell\|Printf\|Doc\)\=String\|RegEx\|SymbolS\?\)\>'
 
 function JuliaMatch(lnum, str, regex, st, ...)
   let s = a:st
@@ -48,9 +48,8 @@ function GetJuliaNestingStruct(lnum, ...)
   let e = a:0 > 1 ? a:2 : -1
   let blocks_stack = []
   let num_closed_blocks = 0
-  let tt = get(b:, 'julia_syntax_version', 10) == 6 ? '\|\%(\%(abstract\|primitive\)\s\+\)\@<!type' : ''
   while 1
-    let fb = JuliaMatch(a:lnum, line, '@\@<!\<\%(if\|else\%(if\)\?\|while\|for\|try\|catch\|finally\|\%(staged\)\?function\|macro\|begin\|mutable\s\+struct\|\%(mutable\s\+\)\@<!struct\|\%(abstract\|primitive\)\s\+type\|immutable\|let\|\%(bare\)\?module\|quote\|do'.tt.'\)\>', s, e)
+    let fb = JuliaMatch(a:lnum, line, '@\@<!\<\%(if\|else\%(if\)\?\|while\|for\|try\|catch\|finally\|\%(staged\)\?function\|macro\|begin\|mutable\s\+struct\|\%(mutable\s\+\)\@<!struct\|\%(abstract\|primitive\)\s\+type\|immutable\|let\|\%(bare\)\?module\|quote\|do\)\>', s, e)
     let fe = JuliaMatch(a:lnum, line, '@\@<!\<end\>', s, e)
 
     if fb < 0 && fe < 0
@@ -132,7 +131,7 @@ function GetJuliaNestingStruct(lnum, ...)
         continue
       endif
 
-      let i = JuliaMatch(a:lnum, line, '@\@<!\<\%(while\|for\|\%(staged\)\?function\|macro\|begin\|\%(mutable\s\+\)\?struct\|\%(abstract\|primitive\)\s\+type\|immutable\|let\|quote\|do'.tt.'\)\>', s)
+      let i = JuliaMatch(a:lnum, line, '@\@<!\<\%(while\|for\|\%(staged\)\?function\|macro\|begin\|\%(mutable\s\+\)\?struct\|\%(abstract\|primitive\)\s\+type\|immutable\|let\|quote\|do\)\>', s)
       if i >= 0 && i == fb
         if match(line, '\C\<\%(mutable\|abstract\|primitive\)', i) != -1
           let s = i+11
@@ -315,11 +314,17 @@ function GetJuliaIndent()
     " Second scenario: some multiline bracketed expression was closed in the
     " previous line. But since we know we are still in a bracketed expression,
     " we need to find the line where the bracket was open
-    elseif last_closed_bracket != -1 " && exists("loaded_matchit")
-      " we use the % command to skip back (this is buggy without matchit, and
-      " is potentially a disaster if % got remapped)
+    elseif last_closed_bracket != -1
+      " we use the % command to skip back (tries to ues matchit if possible,
+      " otherwise resorts to vim's default, which is buggy but better than
+      " nothing)
       call cursor(lnum, last_closed_bracket)
-      normal %
+      let percmap = maparg("%", "n") 
+      if exists("g:loaded_matchit") && percmap =~# 'Match\%(it\|_wrapper\)'
+        normal %
+      else
+        normal! %
+      end
       if line(".") == lnum
         " something wrong here, give up
         let ind = indent(lnum)
@@ -363,23 +368,13 @@ function GetJuliaIndent()
 
   " Analyse the reference line
   let [num_open_blocks, num_closed_blocks] = GetJuliaNestingStruct(lnum, st, lim)
-
-  " Increase indentation for each newly opened block
-  " in the reference line
-  while num_open_blocks > 0
-    let ind += &sw
-    let num_open_blocks -= 1
-  endwhile
+  " Increase indentation for each newly opened block in the reference line
+  let ind += shiftwidth() * num_open_blocks
 
   " Analyse the current line
   let [num_open_blocks, num_closed_blocks] = GetJuliaNestingStruct(v:lnum)
-
-  " Decrease indentation for each closed block
-  " in the current line
-  while num_closed_blocks > 0
-    let ind -= &sw
-    let num_closed_blocks -= 1
-  endwhile
+  " Decrease indentation for each closed block in the current line
+  let ind -= shiftwidth() * num_closed_blocks
 
   return ind
 endfunction

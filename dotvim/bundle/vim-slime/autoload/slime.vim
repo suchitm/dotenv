@@ -218,6 +218,35 @@ function! s:VimterminalConfig() abort
   endif
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" X11 window
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! s:X11Send(config, text)
+  call system("xdotool type --delay 0 --window " . b:slime_config["window_id"] . " -- " . shellescape(a:text))
+endfunction
+
+function! s:X11Config() abort
+  if !exists("b:slime_config")
+    let b:slime_config = {"window_id": ""}
+  end
+  let b:slime_config["window_id"] = trim(system("xdotool selectwindow"))
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dtach
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! s:DtachSend(config, text)
+  call system("dtach -p " . b:slime_config["socket_path"], a:text)
+endfunction
+
+function! s:DtachConfig() abort
+  if !exists("b:slime_config")
+    let b:slime_config = {"socket_path": "/tmp/slime"}
+  end
+  let b:slime_config["socket_path"] = input("dtach socket path: ", b:slime_config["socket_path"])
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helpers
@@ -235,7 +264,9 @@ endfunction
 function! s:_EscapeText(text)
   if exists("&filetype")
     let custom_escape = "_EscapeText_" . substitute(&filetype, "[.]", "_", "g")
-    if exists("*" . custom_escape)
+    if exists("*SlimeOverride" . custom_escape)
+      let result = call("SlimeOverride" . custom_escape, [a:text])
+    elseif exists("*" . custom_escape)
       let result = call(custom_escape, [a:text])
     end
   end
@@ -317,21 +348,29 @@ function! slime#send_lines(count) abort
   call setreg('"', rv, rt)
 endfunction
 
+function! slime#send_cell(cell_delimiter) abort
+  let line_ini = search(a:cell_delimiter, 'bcnW')
+  let line_end = search(a:cell_delimiter, 'nW')
+
+  " line after delimiter or top of file
+  let line_ini = line_ini ? line_ini + 1 : 1
+  " line before delimiter or bottom of file
+  let line_end = line_end ? line_end - 1 : line("$")
+
+  if line_ini <= line_end
+    call slime#send_range(line_ini, line_end)
+  endif
+endfunction
+
 function! slime#store_curpos()
   if g:slime_preserve_curpos == 1
-    let has_getcurpos = exists("*getcurpos")
-    if has_getcurpos
-      " getcurpos() doesn't exist before 7.4.313.
-      let s:cur = getcurpos()
-    else
-      let s:cur = getpos('.')
-    endif
+    let s:cur = winsaveview()
   endif
 endfunction
 
 function! s:SlimeRestoreCurPos()
   if g:slime_preserve_curpos == 1 && exists("s:cur")
-    call setpos('.', s:cur)
+    call winrestview(s:cur)
     unlet s:cur
   endif
 endfunction
@@ -366,6 +405,10 @@ endfunction
 
 " delegation
 function! s:SlimeDispatch(name, ...)
+  " allow custom override
+  if exists("*SlimeOverride" . a:name)
+    return call("SlimeOverride" . a:name, a:000)
+  end
   let target = substitute(tolower(g:slime_target), '\(.\)', '\u\1', '') " Capitalize
   return call("s:" . target . a:name, a:000)
 endfunction
