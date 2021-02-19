@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-ENV R_VERSION=${R_VERSION:-4.0.0}
+ENV R_VERSION=${R_VERSION:-4.0.4}
 
 RUN apt-get update
 
