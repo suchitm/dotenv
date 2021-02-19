@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/suchit/fosr_clust_full/cjs_draft/response_to_review'
+let g:netrw_dirhist_9='/Users/suchit/dotenv'
+let g:netrw_dirhist_8='/Users/suchit/vir/R'
+let g:netrw_dirhist_7='/Users/suchit/fastbayes/src/include'
+let g:netrw_dirhist_6='/Users/suchit/suchitm.github.io/_includes'
+let g:netrw_dirhist_5='/Users/suchit/suchitm.github.io/_posts'
 let g:netrw_dirhist_4='/Users/suchit/dotenv/.git'
 let g:netrw_dirhist_3='/Users/suchit/suchitm.github.io/_posts'
 let g:netrw_dirhist_2='/Users/suchit/minima/_posts'
