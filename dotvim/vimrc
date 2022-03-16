@@ -1,6 +1,8 @@
 set nocompatible
 filetype plugin indent on
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
 set cc=81
 
 call pathogen#infect()
@@ -34,72 +36,72 @@ filetype plugin indent on    " required
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-au BufNewFile,BufRead *.jl set tabstop=2
-au BufNewFile,BufRead *.jl set softtabstop=2
+au BufNewFile,BufRead *.jl set tabstop=4
+au BufNewFile,BufRead *.jl set softtabstop=4
 au BufNewFile,BufRead *.jl set shiftwidth=2
 au BufNewFile,BufRead *.jl set textwidth=80
 au BufNewFile,BufRead *.jl set expandtab
 au BufNewFile,BufRead *.jl set autoindent
 au BufNewFile,BufRead *.jl set fileformat=unix
 
-au BufNewFile,BufRead *.html set tabstop=2
-au BufNewFile,BufRead *.html set softtabstop=2
+au BufNewFile,BufRead *.html set tabstop=4
+au BufNewFile,BufRead *.html set softtabstop=4
 au BufNewFile,BufRead *.html set shiftwidth=2
 au BufNewFile,BufRead *.html set textwidth=80
 au BufNewFile,BufRead *.html set expandtab
 au BufNewFile,BufRead *.html set autoindent
 au BufNewFile,BufRead *.html set fileformat=unix
 
-au BufNewFile,BufRead *.py set tabstop=2
-au BufNewFile,BufRead *.py set softtabstop=2
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=2
 au BufNewFile,BufRead *.py set textwidth=80
 au BufNewFile,BufRead *.py set expandtab
 au BufNewFile,BufRead *.py set autoindent
 au BufNewFile,BufRead *.py set fileformat=unix
 
-au BufNewFile,BufRead *.R set tabstop=2
-au BufNewFile,BufRead *.R set softtabstop=2
+au BufNewFile,BufRead *.R set tabstop=4
+au BufNewFile,BufRead *.R set softtabstop=4
 au BufNewFile,BufRead *.R set shiftwidth=2
 au BufNewFile,BufRead *.R set textwidth=80
 au BufNewFile,BufRead *.R set expandtab
 au BufNewFile,BufRead *.R set autoindent
 au BufNewFile,BufRead *.R set fileformat=unix
 
-au BufNewFile,BufRead *.r set tabstop=2
-au BufNewFile,BufRead *.r set softtabstop=2
+au BufNewFile,BufRead *.r set tabstop=4
+au BufNewFile,BufRead *.r set softtabstop=4
 au BufNewFile,BufRead *.r set shiftwidth=2
 au BufNewFile,BufRead *.r set textwidth=80
 au BufNewFile,BufRead *.r set expandtab
 au BufNewFile,BufRead *.r set autoindent
 au BufNewFile,BufRead *.r set fileformat=unix
 
-au BufNewFile,BufRead *.tex set tabstop=2
-au BufNewFile,BufRead *.tex set softtabstop=2
+au BufNewFile,BufRead *.tex set tabstop=4
+au BufNewFile,BufRead *.tex set softtabstop=4
 au BufNewFile,BufRead *.tex set shiftwidth=2
 au BufNewFile,BufRead *.tex set textwidth=80
 au BufNewFile,BufRead *.tex set expandtab
 au BufNewFile,BufRead *.tex set autoindent
 au BufNewFile,BufRead *.tex set fileformat=unix
 
-au BufNewFile,BufRead *.cpp set tabstop=2
-au BufNewFile,BufRead *.cpp set softtabstop=2
+au BufNewFile,BufRead *.cpp set tabstop=4
+au BufNewFile,BufRead *.cpp set softtabstop=4
 au BufNewFile,BufRead *.cpp set shiftwidth=2
 au BufNewFile,BufRead *.cpp set textwidth=80
 au BufNewFile,BufRead *.cpp set expandtab
 au BufNewFile,BufRead *.cpp set autoindent
 au BufNewFile,BufRead *.cpp set fileformat=unix
 
-au BufNewFile,BufRead *.rst set tabstop=2
-au BufNewFile,BufRead *.rst set softtabstop=2
+au BufNewFile,BufRead *.rst set tabstop=4
+au BufNewFile,BufRead *.rst set softtabstop=4
 au BufNewFile,BufRead *.rst set shiftwidth=2
 au BufNewFile,BufRead *.rst set textwidth=80
 au BufNewFile,BufRead *.rst set expandtab
 au BufNewFile,BufRead *.rst set autoindent
 au BufNewFile,BufRead *.rst set fileformat=unix
 
-au BufNewFile,BufRead *.md set tabstop=2
-au BufNewFile,BufRead *.md set softtabstop=2
+au BufNewFile,BufRead *.md set tabstop=4
+au BufNewFile,BufRead *.md set softtabstop=4
 au BufNewFile,BufRead *.md set shiftwidth=2
 au BufNewFile,BufRead *.md set textwidth=80
 au BufNewFile,BufRead *.md set expandtab
