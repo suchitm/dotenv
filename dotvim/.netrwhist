@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/suchit/lol_hedge_sim/sims'
+let g:netrw_dirhist_4='/Users/suchit/dfk/valuation'
+let g:netrw_dirhist_3='/Users/suchit/dfk/summon'
+let g:netrw_dirhist_2='/Users/suchit/dfk'
+let g:netrw_dirhist_1='/Users/suchit/dfk/valuation'
+let g:netrw_dirhist_0='/Users/suchit/dfk'
+let g:netrw_dirhist_9='/Users/suchit/dfk/summon'
+let g:netrw_dirhist_8='/Users/suchit/dfk/hero'
+let g:netrw_dirhist_7='/Users/suchit/dfk/summon'
+let g:netrw_dirhist_6='/Users/suchit/dfk/auction'
