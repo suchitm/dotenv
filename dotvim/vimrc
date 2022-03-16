@@ -1,11 +1,14 @@
+call pathogen#infect()
+
 set nocompatible
 filetype plugin indent on
-syntax enable
-set background=dark
-colorscheme solarized
 set cc=81
 
-call pathogen#infect()
+syntax on
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+
 call pathogen#helptags()
 
 inoremap jj <esc>
