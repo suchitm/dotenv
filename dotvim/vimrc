@@ -26,8 +26,8 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'Yggdroot/indentLine'
 Plugin 'TovarishFin/vim-solidity'
+Plugin 'viera/vim-javascript'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -133,3 +133,4 @@ let g:default_julia_version = 'devel'
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_python_ipython = 1
 let g:vim_markdown_math = 1
+let g:indentLine_color_term = 196
