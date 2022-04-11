@@ -39,6 +39,14 @@ filetype plugin indent on    " required
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+au BufNewFile,BufRead *.sol set tabstop=4
+au BufNewFile,BufRead *.sol set softtabstop=4
+au BufNewFile,BufRead *.sol set shiftwidth=4
+au BufNewFile,BufRead *.sol set textwidth=80
+au BufNewFile,BufRead *.sol set expandtab
+au BufNewFile,BufRead *.sol set autoindent
+au BufNewFile,BufRead *.sol set fileformat=unix
+
 au BufNewFile,BufRead *.jl set tabstop=4
 au BufNewFile,BufRead *.jl set softtabstop=4
 au BufNewFile,BufRead *.jl set shiftwidth=4
