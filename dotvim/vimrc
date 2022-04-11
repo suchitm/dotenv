@@ -27,6 +27,7 @@ Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Yggdroot/indentLine'
+Plugin 'TovarishFin/vim-solidity'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
