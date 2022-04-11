@@ -13,3 +13,9 @@
 [submodule "dotvim/bundle/vim-markdown"]
 	path = dotvim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "dotvim/bundle/indentLine"]
+	path = dotvim/bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule "dotvim/bundle/vim-solidity"]
+	path = dotvim/bundle/vim-solidity
+	url = https://github.com/TovarishFin/vim-solidity
