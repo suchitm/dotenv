@@ -22,6 +22,3 @@
 [submodule "dotvim/bundle/indentLine"]
 	path = dotvim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
-[submodule "dotvim/bundle/vim-colors-solarized"]
-	path = dotvim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
