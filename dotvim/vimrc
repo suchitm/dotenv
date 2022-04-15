@@ -4,12 +4,12 @@ set nocompatible
 filetype plugin indent on
 set cc=81
 
+let g:solarized_termtrans = 1
+
 syntax on
 set background=dark
 colorscheme solarized
 
-let g:solarized_termtrans = 1
-let g:solarized_termcolor=256 
 
 call pathogen#helptags()
 
