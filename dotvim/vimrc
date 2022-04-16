@@ -24,11 +24,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-# Plugin 'jpalardy/vim-slime'
+Plugin 'jpalardy/vim-slime'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-# Plugin 'TovarishFin/vim-solidity'
+Plugin 'TovarishFin/vim-solidity'
 Plugin 'viera/vim-javascript'
 
 " add all your plugins here (note older versions of Vundle
