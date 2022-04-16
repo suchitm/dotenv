@@ -1,24 +1,9 @@
 [submodule "dotvim/bundle/vim-slime"]
 	path = dotvim/bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime
-[submodule "dotvim/bundle/bundle/Vundle.vim"]
-	path = dotvim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "dotvim/bundle/julia-vim"]
-	path = dotvim/bundle/julia-vim
-	url = https://github.com/JuliaeditorSupport/julia-vim
 [submodule "dotvim/bundle/tabular"]
 	path = dotvim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "dotvim/bundle/vim-markdown"]
-	path = dotvim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
-[submodule "dotvim/bundle/vim-solidity"]
-	path = dotvim/bundle/vim-solidity
-	url = https://github.com/TovarishFin/vim-solidity.git
-[submodule "dotvim/bundle/vim-javascript"]
-	path = dotvim/bundle/vim-javascript
-	url = https://github.com/vieira/vim-javascript.git
-[submodule "dotvim/bundle/indentLine"]
-	path = dotvim/bundle/indentLine
-	url = https://github.com/Yggdroot/indentLine
+[submodule "dotvim/bundle/vim-polyglot"]
+	path = dotvim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
