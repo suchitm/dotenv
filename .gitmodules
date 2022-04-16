@@ -4,3 +4,6 @@
 [submodule "dotvim/bundle/tabular"]
 	path = dotvim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "dotvim/bundle/vim-polyglot"]
+	path = dotvim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git

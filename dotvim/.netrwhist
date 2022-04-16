@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/suchitmehrotra/dotenv/dotvim'
+let g:netrw_dirhist_6='/Users/suchitmehrotra/dotenv'
+let g:netrw_dirhist_5='/Users/suchitmehrotra/dotenv/dotvim'
 let g:netrw_dirhist_4='/Users/suchitmehrotra/dotenv/.git/modules/dotvim/bundle'
 let g:netrw_dirhist_3='/Users/suchitmehrotra/dotenv/dotvim/bundle'
 let g:netrw_dirhist_2='/Users/suchitmehrotra/dotenv/.git/modules/dotvim/bundle'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_1='/Users/suchitmehrotra/dotenv/.git/modules/dotvim'
 let g:netrw_dirhist_0='/Users/suchitmehrotra/dotenv/.git/modules'
 let g:netrw_dirhist_9='/Users/suchitmehrotra/dotenv/.git'
 let g:netrw_dirhist_8='/Users/suchitmehrotra/dotenv/dotvim/bundle/vim-solidity'
-let g:netrw_dirhist_7='/Users/suchitmehrotra/suchitm.github.io/_posts'
-let g:netrw_dirhist_6='/Users/suchit/suchitm.github.io/.github/workflows'
-let g:netrw_dirhist_5='/Users/suchit/suchitm.github.io/.github'

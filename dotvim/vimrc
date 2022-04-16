@@ -3,13 +3,12 @@ execute pathogen#infect()
 set nocompatible
 filetype plugin indent on
 set cc=81
+set re=2
 
 let g:solarized_termtrans = 1
 
-syntax on
 set background=dark
 colorscheme solarized
-
 
 execute pathogen#helptags()
 
