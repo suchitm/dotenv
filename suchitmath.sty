@@ -1,0 +1,152 @@
+\ProvidesPackage{suchitmath}
+
+\usepackage{amsthm} 
+\usepackage{bm} 
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage[authoryear]{natbib} 
+\usepackage[letterpaper, margin=1in]{geometry} 
+\usepackage{algorithm2e} 
+\usepackage{float}
+\allowdisplaybreaks 
+\usepackage{graphicx} 
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{setspace}
+% \usepackage[nomarkers]{endfloat}
+\usepackage{authblk}
+\usepackage{xcolor}
+\newtheorem*{remark}{Remark}
+
+%*********************************************** 
+% custom latex commands
+%***********************************************
+\newcommand{\Real}{\mathbb{R}} 
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\dom}{{\bf dom}\,} 
+\newcommand{\Tra}{^{\sf T}} % Transpose
+\newcommand{\Inv}{^{-1}} % Inverse 
+\newcommand{\diag}{\mathop{\rmdiag}\nolimits} 
+\newcommand{\tr}{\operatorname{tr}} % Trace
+\newcommand{\epi}{\operatorname{epi}} % epigraph
+\newcommand{\V}[1]{{\bm{\mathbf{\MakeLowercase{#1}}}}} % vector
+\newcommand{\VE}[2]{\MakeLowercase{#1}_{#2}} % vector element
+\newcommand{\Vn}[2]{\V{#1}^{(#2)}} % n-th vector
+\newcommand{\Vtilde}[1]{{\bm{\tilde \mathbf{\MakeLowercase{#1}}}}} % vector
+\newcommand{\Vhat}[1]{{\bm{\hat \mathbf{\MakeLowercase{#1}}}}} % vector
+\newcommand{\VtildeE}[2]{\tilde{\MakeLowercase{#1}}_{#2}} % vector element
+\newcommand{\M}[1]{{\bm{\mathbf{\MakeUppercase{#1}}}}} % matrix
+\newcommand{\ME}[2]{\MakeLowercase{#1}_{#2}} % matrix element
+\newcommand{\Mtilde}[1]{{\bm{\tilde \mathbf{\MakeUppercase{#1}}}}} % matrix
+\newcommand{\Mbar}[1]{{\bm{\bar \mathbf{\MakeUppercase{#1}}}}} % matrix
+\newcommand{\Mn}[2]{\M{#1}^{(#2)}} % n-th matrix
+\newcommand{\Minv}[1]{{\bm{\mathbf{\MakeUppercase{#1}}}}^{-1}} % matrix
+\newcommand{\Mhat}[1]{{\bm{\hat \mathbf{\MakeUppercase{#1}}}}} % vector
+
+% to keep for the future
+% Useful definitions for vectors and stuff
+
+% matrices and vectors
+\def\A{{\bf A}} 
+\def\a{{\bf a}} 
+
+\def\B{{\bf B}} 
+\def\Btilde{\Mtilde{B}}
+\def\b{{\bf b}} 
+\def\btilde{\Vtilde{b}}
+
+\def\C{{\bf C}} 
+\def\c{{\bf c}} 
+
+\def\D{{\bf D}} 
+\def\d{{\bf d}}
+
+\def\E{{\bf E}} 
+\def\e{{\bf e}} 
+\def\ehat{{\Vhat{e}}} 
+
+\def\F{{\bf F}} 
+\def\f{{\bf f}} 
+
+\def\G{{\bf G}}
+\def\g{{\bf g}} 
+
+\def\H{{\bf H}} 
+\def\h{{\bf h}} 
+
+\def\I{{\bf I}}
+
+\def\K{{\bf K}} 
+\def\k{{\bf k}} 
+
+\def\L{{\bf L}}
+
+\def\n{{\bf n}}
+
+\def\P{{\bf P}} 
+\def\p{{\bf p}} 
+
+\def\Q{{\bf Q}} 
+\def\q{{\bf q}} 
+
+\def\R{{\bf R}}
+\def\rr{{\bf r}} 
+
+\def\S{{\bf S}} 
+\def\s{{\bf s}} 
+
+\def\t{{\bf t}} 
+
+\def\U{{\bf U}}
+\def\u{{\bf u}}
+
+\def\W{{\bf W}} 
+\def\w{{\bf w}} 
+\def\Wtilde{\Mtilde{W}}
+
+\def\X{{\bf X}} 
+\def\x{{\bf x}} 
+\def\Xtilde{\Mtilde{X}}
+
+\def\Y{{\bf Y}}
+\def\y{{\bf y}} 
+
+\def\Z{{\bf Z}} 
+\def\z{{\bf z}} 
+\def \ZtZ{{\Z \Tra \Z}} 
+\def\ztz{{\z \Tra \z}}
+\def\Ztilde{\Mtilde{Z}}
+
+\def \valpha{{\V{\alpha}}}
+\def \vbeta{{\V{\beta}}}
+\def \vpi{{\V{\pi}}}
+\def \vmu{{\V{\mu}}}
+
+\def \mpsi{{\M{\Psi}}} 
+\def \vpsi{{\V{\psi}}}
+
+\def \mlambda{{\M{\Lambda}}}
+
+\def \mtheta{{\M{\Theta}}} 
+\def \vtheta{{\V{\theta}}}
+
+\def \mgamma{{\M{\Gamma}}} 
+\def \mgammainv{{\M{\Gamma}\Inv}} 
+\def \vgamma{{\V{\gamma}}}
+
+\def \msigma{{\M{\Sigma}}}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\normal}{\mathcal{N}} 
+\newcommand{\yty}{\y \Tra \y}
+\newcommand{\argmin}[1]{\underset{#1}{\text{ arg min }} }
+\newcommand{\simiid}{\overset{iid}{\sim}}
+
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords:}} #1}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+
+%*********************************************** 
+% end custom latex commands
+%***********************************************
